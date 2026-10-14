@@ -1,4 +1,6 @@
-dc := "docker compose"
+# docker recipe 的 compose 在两级上目录 (pc/); 训练 recipe 在本目录跑 uv, 不受影响
+role_dir := source_directory() / ".." / ".."
+dc := "cd " + role_dir + " && docker compose"
 
 default: sh
 
